@@ -23,8 +23,8 @@ router.post('/register', (req, res) => {
     const { name, email, password, confirmPassword } = req.body
     const errors = []
 
-    if (!name || !email || !password || !confirmPassword) {
-        errors.push({ message: '所有欄位都是必填!' })
+    if (!email || !password || !confirmPassword) {
+        errors.push({ message: 'email和password欄位為必填!' })
     }
 
     if (password !== confirmPassword) {
@@ -63,7 +63,13 @@ router.post('/register', (req, res) => {
                     email,
                     password: hash
                 }))
-                .then(() => res.redirect('/'))
+                .then(() => {
+                    const finishMessage = []
+                    finishMessage.push({ message: '註冊成功' })
+                    return res.render('register', {
+                        finishMessage
+                    })
+                })
                 .catch(err => console.log(err))
 
         })
