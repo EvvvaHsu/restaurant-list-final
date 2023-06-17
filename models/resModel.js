@@ -38,6 +38,12 @@ const resSchema = new Schema({
     description: {
         type: String,
         required: false
+    },
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        index: true,
+        required: true
     }
 })
 
