@@ -4,6 +4,7 @@ const Res = require('../../models/resModel')   //載入model
 
 
 router.get("/:sort", (req, res) => {
+    const userId = req.user._id
 
     const sortOption = req.params.sort
 
@@ -18,8 +19,8 @@ router.get("/:sort", (req, res) => {
         sortQuery = { location: 1 }
     }
 
-    Res
-        .find()
+    return Res
+        .find({ userId})
         .lean()
         .sort(sortQuery)
         .then(restaurants => res.render('index', { restaurants }))

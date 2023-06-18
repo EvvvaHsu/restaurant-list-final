@@ -4,6 +4,7 @@ const Res = require('../../models/resModel')   //載入model
 
 router.get('/', (req, res) => {
     // console.log(req.query)
+    const userId = req.user._id
 
     const keyword = req.query.keyword.trim().toLowerCase()
 
@@ -11,7 +12,7 @@ router.get('/', (req, res) => {
         return res.redirect('/')
     }
 
-    Res.find({})
+    Res.find({userId})
         .lean()
         .then(restaurants => {
             const filteredRestaurant = restaurants.filter(data => data.name.toLowerCase().includes(keyword) || data.name_en.toLowerCase().includes(keyword) || data.category.toLowerCase().includes(keyword))
