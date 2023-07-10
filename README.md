@@ -4,7 +4,7 @@
 
 ## 專案畫面
 
-![image](https://github.com/EvvvaHsu/restaurant-website/blob/693d678ab96bf97d737b9794efb3e9afe41648f1/public/restaurant-home-page.png)
+![image](https://github.com/EvvvaHsu/restaurant-list-final/blob/0591a56007877a1e2c1470ef77e1dc57ce91d4de/public/restaurant-home-page.png)
 
 ![image](https://github.com/EvvvaHsu/restaurant-website/blob/693d678ab96bf97d737b9794efb3e9afe41648f1/public/restaurant-details-page.png)
 
