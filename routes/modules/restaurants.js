@@ -48,25 +48,10 @@ router.get('/:id/edit', (req, res) => {
 router.put('/:id', (req, res) => {
     const userId = req.user._id
     const _id = req.params.id
-    let { name, name_en, category, phone, location, rating, image, google_map, description } = req.body
-
-    return Res.findOne({ _id, userId})
-        .then(restaurant => {
-            restaurant.name = name,
-                restaurant.name_en = name_en,
-                restaurant.category = category,
-                restaurant.image = image,
-                restaurant.rating = rating,
-                restaurant.location = location,
-                restaurant.phone = phone,
-                restaurant.google_map = google_map,
-                restaurant.description = description
-
-            return restaurant.save()
-        })
-        .then(() => res.redirect(`/restaurants/${_id}`))
-        .catch(error => console.log(error))
-})
+    Res.findByIdAndUpdate({ _id, userId }, req.body)
+      .then(() => res.redirect(`/restaurants/${_id}`))
+      .catch(error => console.log(error))
+  })
 
 router.delete('/:id', (req, res) => {
     const userId = req.user._id

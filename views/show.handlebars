@@ -37,7 +37,7 @@
 
             <a href="/" class="btn btn-dark mb-1">back</a>
             <a href="/restaurants/{{ restaurant._id }}/edit" class="btn btn-info mb-1">edit</a>
-            <form action="/restaurants/{{ restaurant._id }}?_method=DELETE" method="POST" style="display: inline;">
+            <form action="/restaurants/{{ restaurant._id }}?_method=DELETE" method="POST" style="display: inline;" onclick="return confirm('確定刪除這間餐廳嗎？')">
                 <button type="submit" class="btn btn-primary mb-1">delete</button>
             </form>
 

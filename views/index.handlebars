@@ -60,7 +60,7 @@
                                 <a href="./restaurants/{{ this._id }}" class="btn btn-dark mb-1">Details</a>
                                 <a href="./restaurants/{{ this._id }}/edit" class="btn btn-info mb-1">Edit</a>
                                 <form action="./restaurants/{{ this._id }}?_method=DELETE" method="POST"
-                                    style="display: inline;">
+                                    style="display: inline;" onclick="return confirm('確定刪除這間餐廳嗎？')">
                                     <button type="submit" class="btn btn-primary mb-1">Delete</button>
                                 </form>
                             </div>
