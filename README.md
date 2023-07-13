@@ -13,10 +13,10 @@
 1. 使用者可以點擊任一餐廳，查看更多餐廳資訊，如地址、電話與簡介
 2. 使用者可以依照餐廳名稱進行搜尋
 3. 使用者可以瀏覽一家餐廳的詳細資訊
-4. 使用者可以瀏覽全部所有餐廳
-5. 使用者可以搜尋餐廳名稱，並針對餐廳英文名稱排序
-6. 使用者可以建立帳號及使用密碼登入
-7. 使用者可以透過facebook進行帳號登入及註冊
+4. 使用者可以瀏覽、新增、修改並刪除餐廳資訊
+6. 使用者可以搜尋餐廳名稱，並針對餐廳英文名稱排序
+7. 使用者可以建立帳號及使用密碼登入
+8. 使用者可以透過facebook進行帳號登入及註冊
 
 ## Environment SetUp - 環境建置
 
@@ -27,13 +27,13 @@
 1. 打開你的 terminal，Clone 此專案至本機電腦
 
 ```
-git clone https://github.com/EvvvaHsu/restaurant-website.git
+git clone https://github.com/EvvvaHsu/restaurant-list-final.git
 ```
 
-2. 開啟終端機(Terminal)，進入存放此專案的資料夾 restaurant_list
+2. 開啟終端機(Terminal)，進入存放此專案的資料夾 restaurant_list3.0
 
 ```
-cd restaurant_list
+cd restaurant_list3.0
 ```
 
 3. 安裝 npm 套件
@@ -54,6 +54,11 @@ cd restaurant_list
 nodemon app.js
 ```
 
+6. 執行種子檔案 (optional)
+
+```
+npm run seed
+```
 
 現在，你可開啟任一瀏覽器瀏覽器輸入 [http://localhost:3000](http://localhost:3000) 開始使用Restaurant website囉！
 
