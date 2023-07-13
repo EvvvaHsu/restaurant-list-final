@@ -9,7 +9,7 @@ router.get('/login', (req, res) => {
     res.render('login')
 })
 
-router.post('/login', (req, res) => {
+router.post('/login', (req, res, next) => {
     const { email, password } = req.body
     if (!email || !password) {
         req.flash('warning_msg', 'email和password不能為空')
