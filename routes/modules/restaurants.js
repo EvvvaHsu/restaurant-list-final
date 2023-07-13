@@ -63,5 +63,14 @@ router.delete('/:id', (req, res) => {
         .catch(error => console.log(error))
 })
 
+//其他寫法:
+// router.delete('/:id', (req, res) => {
+//     const userId = req.user._id
+//     const _id = req.params.id
+//     Res.findByIdAndDelete({ _id, userId })
+//       .then(() => res.redirect("/"))
+//       .catch(error => console.log(error))
+//   })
+
 
 module.exports = router
