@@ -2,7 +2,7 @@
 <div class="container search-bar">
     <div class="search-bar-outer">
         <div class="search-bar-inner">
-            <form action="/search">
+            <form action="/search" class="mb-2">
                 <h4 class="mb-2">尋找餐廳：</h4>
                 <div class="input-group">
                     <input type="text" name="keyword" value="{{keyword}}" class="form-control" placeholder="輸入餐廳、分類"
@@ -14,19 +14,18 @@
                     <div class="input-group-append">
                         <a href="./restaurants/new" role="button" class="btn btn-primary"> 新增餐廳 </a>
                     </div>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            篩選
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="./sort/sortAtoZ">A -> Z</a></li>
-                            <li><a class="dropdown-item" href="./sort/sortZtoA">Z -> A</a></li>
-                            <li><a class="dropdown-item" href="./sort/sortCategory">類別</a></li>
-                            <li><a class="dropdown-item" href="./sort/sortLocation">地區</a></li>
-                        </ul>
-                    </div>
                 </div>
+            </form>
+            <form id="sortForm" action="/" method="POST" class="d-inline">
+            <h4 class="mb-2">篩選餐廳：</h4>
+                <select class="form-select" name="alphabeticalOrder" id="alphabeticalOrder"
+                    onchange="this.form.submit()">
+                    <option selected disabled>所有類別</option>
+                    <option value="A-Z">A-Z</option>
+                    <option value="Z-A">Z-A</option>
+                    <option value="sortCategory">類別</option>
+                    <option value="sortLocation">地區</option>
+                </select>
             </form>
         </div>
     </div>
