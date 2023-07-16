@@ -9,10 +9,8 @@ router.get('/new', (req, res) => {
 
 router.post('/', (req, res) => {
     const userId = req.user._id
-    return Restaurants.create({ ...req.body, userId })
-        .then(() => {
-            return res.redirect('/')
-        })
+    return Res.create({ ...req.body, userId })
+        .then(() => {res.redirect('/')})
         .catch(error => next(error))
 })
 
