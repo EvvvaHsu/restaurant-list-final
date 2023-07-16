@@ -14,7 +14,7 @@
         </div>
         <div class="mb-3">
             <label for="category" class="form-label">分類<span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="category" list="categoryOptions" name="category" value="{{ restaurant.category }}" required />
+            <input type="text" class="form-control" maxlength="10" id="category" list="categoryOptions" name="category" value="{{ restaurant.category }}" required />
             {{! 使用datalist，讓使用者可選擇或自行輸入 }}
             <datalist id="categoryOptions">
                 <option>美式</option>
@@ -30,11 +30,11 @@
         </div>
         <div class="mb-3">
             <label for="location" class="form-label">地址<span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="location" name="location" value="{{ restaurant.location }}" required />
+            <input type="text" class="form-control" maxlength="50"  id="location" name="location" value="{{ restaurant.location }}" required />
         </div>
         <div class="mb-3">
             <label for="phone" class="form-label">電話<span class="text-danger">*</span></label>
-            <input type="tel" class="form-control" id="phone" name="phone" value="{{ restaurant.phone }}" required />
+            <input type="tel" class="form-control" maxlength="13"  id="phone" name="phone" value="{{ restaurant.phone }}" required />
         </div>
         <div class="mb-3">
             <label for="google_map" class="form-label">Google地圖連結<span class="text-danger">*</span></label>
@@ -45,8 +45,8 @@
             <input type="number" class="form-control" id="rating" min="0" max="5" step="0.1" name="rating" value="{{ restaurant.rating }}" required />
         </div>
         <div class="mb-3">
-            <label for="description" class="form-label">描述<span class="text-danger">*</span></label>
-            <textarea class="form-control" id="description" rows="3" name="description" required>{{ restaurant.description }}</textarea>
+            <label for="description" class="form-label">簡介<span class="text-danger">*</span></label>
+            <textarea class="form-control" id="description" rows="3" name="description" maxlength="200" required>{{ restaurant.description }}</textarea>
         </div>
 
         <div class="text-center">

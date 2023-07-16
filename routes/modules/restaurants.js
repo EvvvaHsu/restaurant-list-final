@@ -4,25 +4,16 @@ const Res = require('../../models/resModel')   //載入model
 
 
 router.get('/new', (req, res) => {
-    return res.render('new')
+    return res.render('new', { errors: '' })
 })
 
 router.post('/', (req, res) => {
     const userId = req.user._id
-    const name = req.body.name
-    const name_en = req.body.name_en
-    const category = req.body.category
-    const phone = req.body.phone
-    const location = req.body.location
-    const rating = req.body.rating
-    const image = req.body.image
-    const google_map = req.body.google_map
-    const description = req.body.description
-
-    const restaurant = new Res({ userId, name, name_en, category, phone, location, rating, image, google_map, description })
-    return restaurant.save()
-        .then(() => res.redirect('/'))
-        .catch(error => console.log(error))
+    return Restaurants.create({ ...req.body, userId })
+        .then(() => {
+            return res.redirect('/')
+        })
+        .catch(error => next(error))
 })
 
 router.get('/:id', (req, res) => {
